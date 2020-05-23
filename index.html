@@ -64,10 +64,14 @@
     async function sendMsg() {
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([{
-          'type': 'sticker',
-          'stickerId': 1,
-          'packageId': 1
-        }])
+            'type': 'sticker',
+            'stickerId': 1,
+            'packageId': 1
+          },
+          {
+            // สามารถส่งได้สูงสุด 5 bubble
+          }
+        ])
         alert('Message sent.. ')
       }
     }
@@ -87,7 +91,7 @@
       document.getElementById('userId').append(profile.userId)
       document.getElementById('statusMessage').append(profile.statusMessage)
       document.getElementById('displayName').append(profile.displayName)
-      document.getElementById('decodedIDToken').append(liff.decodedIDToken().email)
+      document.getElementById('decodedIDToken').append(liff.getdecodedIDToken().email)
     }
 
     function getEnvironment() {
