@@ -69,7 +69,38 @@
             'packageId': 1
           },
           {
-            // สามารถส่งได้สูงสุด 5 bubble  
+            "type": "flex",
+            "altText": "Flex Message",
+            "contents": {
+              "type": "bubble",
+              "direction": "ltr",
+              "hero": {
+                "type": "image",
+                "url": "https://www.tot.co.th/images/default-source/default-album/about-tot/splash-page/quick-pay/splash-page_quickpay_ip.png",
+                "flex": 0,
+                "size": "full",
+                "aspectRatio": "3:4",
+                "aspectMode": "cover",
+                "backgroundColor": "#05177B",
+                "action": {
+                  "type": "uri",
+                  "label": "TOT Quick Pay",
+                  "uri": "https://www.tot.co.th/eservice/quickpay"
+                }
+              },
+              "footer": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [{
+                  "type": "button",
+                  "action": {
+                    "type": "uri",
+                    "label": "TOT Quick Pay",
+                    "uri": "https://www.tot.co.th/eservice/quickpay"
+                  }
+                }]
+              }
+            }
           }
         ])
         alert('Message sent.. ')
