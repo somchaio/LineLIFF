@@ -50,10 +50,10 @@
     function createUniversalLink() {}
 
     async function shareMsg() {
-      await liff.shareTargetPicker({
+      await liff.shareTargetPicker([{
         'type': 'text',
         'text': 'ข้อความนี้ส่งโดย ShareTargetPicker'
-      })
+      }])
     }
 
     function logOut() {
@@ -182,7 +182,7 @@
         liff.login()
       }
 
-      // createUniversalLink()
+      // createUniversalLink() = liff.line.me/liffId
     }
     main()
   </script>
