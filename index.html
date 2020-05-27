@@ -47,7 +47,15 @@
   <!-- use sdk for line LIFF-->
   <script src="https://static.line-scdn.net/liff/edge/versions/2.1.13/sdk.js"></script>
   <script>
-    function createUniversalLink() {}
+    function createUniversalLink() {
+      const link1 = liff.permanentLink.createUrl()
+      document.getElementById('universalLink1').append(link1)
+      liff.permanentLink.setExtraQueryParam('param=9')
+
+      const link2 = liff.permanentLink.createUrl()
+      document.getElementById('universalLink2').append(link2)
+      // liff.permanentLink.setExtraQueryParam('param=9')
+    }
 
     async function shareMsg() {
       await liff.shareTargetPicker([{
@@ -178,11 +186,10 @@
         getUserProfile()
         getContext()
         getFriendship()
+        createUniversalLink()
       } else {
         liff.login()
       }
-
-      // createUniversalLink() = liff.line.me/liffId
     }
     main()
   </script>
